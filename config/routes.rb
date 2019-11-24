@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
     end
   end
   devise_for :users

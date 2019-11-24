@@ -59,14 +59,17 @@ Things you may want to cover:
 ・application.jsへ「//= require jquery」を追記  
 ・app/assets/javascripts/payjp.jsを作成し、トークン情報の取得設定を実施  
 
-## 6.ルーティングの設定  
+## 7.ルーティングの設定  
   route.rbに以下の記述を追加し、cardコントローラのルーティングを設定  
   resources :card, only: [:new, :show] do  
     collection do  
       post 'show', to: 'card#show'  
       post 'pay', to: 'card#pay'  
+      post 'delete', to: 'card#delete'  
     end  
   end  
 
-## 6.テストカード情報の登録確認  
+## 6.登録済みカード情報の表示（show.html.haml）  
+
+## 8.テストカード情報の登録確認  
 Pay.jpのサイト(https://pay.jp/docs/testcard)よりテストカードの情報を確認し、実際に登録できるか確認
