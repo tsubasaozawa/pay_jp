@@ -15,11 +15,11 @@ class CardController < ApplicationController
       description: '登録テスト', #なくてもOK
       email: current_user.email, #なくてもOK
       card: params['payjp-token'],
-      metadata: {user_id: current_user.id}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
+      metadata: {user_id: current_user.id} #なくてもOK
+      )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "show"
+        redirect_to card_path(current_user)
       else
         redirect_to action: "pay"
       end
@@ -48,4 +48,5 @@ class CardController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
+
 end

@@ -61,15 +61,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # def pay
-  #   Payjp.api_key = 'sk_test_34bd305b22ac4d8c340b74ed'
-  #   charge = Payjp::Charge.create(
-  #   :amount => @product.price,
-  #   :card => params['payjp-token'],
-  #   :currency => 'jpy',
-  #   )
-  # end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
